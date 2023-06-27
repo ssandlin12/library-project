@@ -1,0 +1,29 @@
+<h2>Books</h2>
+
+<ol>
+  {{#each books}}
+    <li>
+      <h3>
+        {{title}}
+      </h3>
+
+      <h4> by {{author}}</h4>
+
+      <h5>Rating: {{rating}}/10</h5>
+
+      <p>
+        {{description}}
+      </p>
+
+      <button onclick="window.location.href='/books/{{_id}}'">See details</button>
+      <button onclick="window.location.href='/books/{{_id}}/edit'">Edit</button>
+
+      <form action="/books/{{_id}}/delete" method="POST">
+      <button>Delete</button>
+    </form>
+
+    </li>
+
+    <hr />
+  {{/each}}
+</ol>
